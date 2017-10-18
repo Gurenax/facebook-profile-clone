@@ -6,6 +6,7 @@ A facebook profile clone app for Ruby on Rails
 - email: string
 
 ### Profile
+- user: references (User)
 - first_name: string
 - last_name: string
 - location_city: string

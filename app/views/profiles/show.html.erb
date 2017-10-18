@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>Location city:</strong>
+  <%= @profile.location_city %>
+</p>
+
+<p>
+  <strong>Location state:</strong>
+  <%= @profile.location_state %>
+</p>
+
+<p>
+  <strong>Location country code:</strong>
+  <%= @profile.location_country_code %>
+</p>
+
+<p>
+  <strong>Hometown city:</strong>
+  <%= @profile.hometown_city %>
+</p>
+
+<p>
+  <strong>Hometown state:</strong>
+  <%= @profile.hometown_state %>
+</p>
+
+<p>
+  <strong>Hometown country code:</strong>
+  <%= @profile.hometown_country_code %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @profile.job %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @profile.company %>
+</p>
+
+<p>
+  <strong>Partner first name:</strong>
+  <%= @profile.partner_first_name %>
+</p>
+
+<p>
+  <strong>Partner last name:</strong>
+  <%= @profile.partner_last_name %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @profile.birthdate %>
+</p>
+
+<p>
+  <strong>Contact no:</strong>
+  <%= @profile.contact_no %>
+</p>
+
+<p>
+  <strong>Profile image data:</strong>
+  <%= image_tag @profile.profile_image_url(:original) if @profile.profile_image.present? %>
+</p>
+
+<p>
+  <strong>Cover image data:</strong>
+  <%= image_tag @profile.cover_image_url(:original) if @profile.cover_image.present? %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

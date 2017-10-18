@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Location city</th>
+      <th>Location state</th>
+      <th>Location country code</th>
+      <th>Hometown city</th>
+      <th>Hometown state</th>
+      <th>Hometown country code</th>
+      <th>Job</th>
+      <th>Company</th>
+      <th>Partner first name</th>
+      <th>Partner last name</th>
+      <th>Birthdate</th>
+      <th>Contact no</th>
+      <th>Profile image data</th>
+      <th>Cover image data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.user %></td>
+        <td><%= profile.first_name %></td>
+        <td><%= profile.last_name %></td>
+        <td><%= profile.location_city %></td>
+        <td><%= profile.location_state %></td>
+        <td><%= profile.location_country_code %></td>
+        <td><%= profile.hometown_city %></td>
+        <td><%= profile.hometown_state %></td>
+        <td><%= profile.hometown_country_code %></td>
+        <td><%= profile.job %></td>
+        <td><%= profile.company %></td>
+        <td><%= profile.partner_first_name %></td>
+        <td><%= profile.partner_last_name %></td>
+        <td><%= profile.birthdate %></td>
+        <td><%= profile.contact_no %></td>
+        <td><%= image_tag profile.profile_image_url(:thumb) if profile.profile_image.present? %></td>
+        <td><%= image_tag profile.cover_image_url(:thumb) if profile.cover_image.present? %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>

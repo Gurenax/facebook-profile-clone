@@ -1,0 +1,102 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <div class="field"> -->
+    <%#= form.label :user_id %>
+    <%#= form.text_field :user_id, id: :profile_user_id %>
+  <!-- </div> -->
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :profile_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :profile_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_city %>
+    <%= form.text_field :location_city, id: :profile_location_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_state %>
+    <%= form.text_field :location_state, id: :profile_location_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_country_code %>
+    <%= form.text_field :location_country_code, id: :profile_location_country_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hometown_city %>
+    <%= form.text_field :hometown_city, id: :profile_hometown_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hometown_state %>
+    <%= form.text_field :hometown_state, id: :profile_hometown_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hometown_country_code %>
+    <%= form.text_field :hometown_country_code, id: :profile_hometown_country_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job %>
+    <%= form.text_field :job, id: :profile_job %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field :company, id: :profile_company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :partner_first_name %>
+    <%= form.text_field :partner_first_name, id: :profile_partner_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :partner_last_name %>
+    <%= form.text_field :partner_last_name, id: :profile_partner_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.date_field :birthdate, id: :profile_birthdate, min: Date.new(1900, 01, 01), max: Date.today %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact_no %>
+    <%= form.text_field :contact_no, id: :profile_contact_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profile_image %>
+    <%= form.file_field :profile_image, id: :profile_profile_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover_image %>
+    <%= form.file_field :cover_image, id: :profile_cover_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
